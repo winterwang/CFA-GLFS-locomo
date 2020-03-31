@@ -1,0 +1,35 @@
+TITLE: THE STRUCTURE OF LOCOMO25
+DATA: 
+    FILE = "../Locomo25.dat";
+VARIABLE: 
+     NAMES = ID Age Sex Q1-Q25 Total;
+     USEVARIABLES = Q1-Q25;
+     MISSING=.;
+ANALYSIS: 
+    ESTIMATOR = ML;
+
+MODEL: 
+      Body_pain   BY Q1  Q2  Q3  Q4 Q5 Q25;
+      Mov_diff    BY Q5  Q6  Q7   Q8  Q9  Q10  Q11 Q12 Q13 Q14 Q15;
+      Soci_Act    BY Q7  Q12  Q13  Q14 Q15  Q16  Q17 Q18  Q19  Q20 
+                      Q21  Q22  Q23;
+      Cognit      BY Q24  Q25;
+      Soc_act_cog BY Soci_Act Cognit;
+       Q1 with Q2;
+       Q1 with Q8;
+       Q6 with Q14;
+      Q3 with Q25;
+      Q12 with Q11;
+      Q13 with Q12;
+      Q14 with Q19;
+      Q17 with Q20;
+      Q19 with Q20;
+      Q21 with Q13;
+      Q21 with Q23;
+      Q22 with Q23;
+      Q18 with Q22;
+
+      
+OUTPUT: STANDARDIZED;
+        MODINDICES;
+        TECH4;

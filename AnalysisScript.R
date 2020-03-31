@@ -7,7 +7,7 @@
 
 
  #------------------------------------------------------
- # READ THE DATA
+ # READ THE DATA  --------------------------------------
 
 library(readxl) # install readxl if needed
 
@@ -17,7 +17,7 @@ head(Locomo25_data)
 
 
  #------------------------------------------------------
- # LOOK AT THE DISTRIBUTION OF THE DATA
+ # LOOK AT THE DISTRIBUTION OF THE DATA  ---------------
 
 epiDisplay::summ(Locomo25_data$Total) # install epiDisplay if needed
 
@@ -35,7 +35,7 @@ Locomo25_data %>% # the number of patients for each grade of locomotive syndrome
 
 
  #------------------------------------------------------
- # CALCULATE CRONBACH ALPHA
+ # CALCULATE CRONBACH ALPHA  ---------------------------
 
 al <- psych::alpha(Locomo25_data[, 4:28])
 
@@ -43,9 +43,46 @@ psych::alpha.ci(al$total$raw_alpha, n.obs = 500, p.val = 0.05, digits = 4)
 
 
  #------------------------------------------------------
- # PREPARE DATA FOR MPLUS SOFTWARE
+ # PREPARE DATA FOR MPLUS SOFTWARE  --------------------
 
 
 library(MplusAutomation) # install if needed
 
 prepareMplusData(Locomo25_data, "Locomo25.dat")
+
+
+ #------------------------------------------------------
+ # SEND PROGRAM TO MPLUS FROM R  -----------------------
+
+
+# "/Applications/Mplus/mplus" # <- the path on MacOS change to your own path before running 
+# "/opt/mplus/8.4/mplus" # <- the path on Linux OS (Ubuntu etc.) change to your own path before running
+
+    # =========================================================================
+    # SINGLE FACTOR MODEL -----------------------------------------------------
+
+runModels("SingleFactorModel.inp", showOutput = TRUE, Mplus_command = "/Applications/Mplus/mplus")
+
+    # =========================================================================
+    # SIX FACTOR MODEL --------------------------------------------------------
+
+runModels("SixFactorModel.inp", showOutput = TRUE, Mplus_command = "/Applications/Mplus/mplus")
+
+
+    # =========================================================================
+    # ALTERNATIVE MODEL WITH CROSS-LOADING-------------------------------------
+
+runModels("AlternativeModel.inp", showOutput = TRUE, Mplus_command = "/Applications/Mplus/mplus")
+
+    # =========================================================================
+    # PURIFIED MODEL  ---------------------------------------------------------
+
+runModels("PurifiedModel.inp", showOutput = TRUE, Mplus_command = "/Applications/Mplus/mplus")
+
+
+    # =========================================================================
+    # TANABE MODEL FOR REFERENCE ----------------------------------------------
+
+runModels("tanabe.inp", showOutput = TRUE, Mplus_command = "/Applications/Mplus/mplus")
+
+

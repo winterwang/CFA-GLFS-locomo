@@ -1,0 +1,19 @@
+TITLE: THE STRUCTURE OF LOCOMO25
+DATA: 
+    FILE = "../Locomo25.dat";
+VARIABLE: 
+     NAMES = ID Age Sex Q1-Q25 Total;
+     USEVARIABLES = Q3 Q8 Q10 Q11 Q12 Q13 Q18 Q22 Q23;
+     auxiliary = Total;
+     MISSING=.;
+ANALYSIS: 
+    !ESTIMATOR = MLR;
+    ESTIMATOR = ML;
+
+MODEL:
+      Outdoor   BY Q18  Q22  Q23;
+      Indoor    BY Q8   Q10  Q11;
+      LLfuction BY Q3   Q12  Q13;
+
+OUTPUT: STANDARDIZED;
+        MODINDICES;

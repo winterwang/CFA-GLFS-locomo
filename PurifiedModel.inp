@@ -1,0 +1,34 @@
+TITLE: THE STRUCTURE OF LOCOMO25 removing some items
+DATA: 
+    FILE = "../Locomo25.dat";
+VARIABLE: 
+     NAMES = ID Age Sex Q1-Q25 Total;
+     USEVARIABLES = Q2-Q4 Q6 Q8-Q11  Q15-Q21 Q24; !Q13
+     MISSING=.;
+ANALYSIS: 
+    ESTIMATOR = ML;
+
+MODEL: 
+      Body_pai   BY Q2  Q3  Q4 Q6;! Q13;
+      Mov_diff    BY Q6  Q8  Q9  Q10  Q11; ! Q15;
+      Psy_soc    BY  Q15  Q16  Q17 Q18  Q19  Q20 
+                      Q21 Q24; !Q13
+      Q21 with Q19;
+      Q4 with Q11;
+      Q8 with Q15;
+      !Q13 with Q3;
+      Q17 with Q20;
+      Q19 with Q20;
+      !Q21 with Q13;
+      Q21 with Q16;
+      !Q15 with Q13;
+      Q20 with Q16;
+      Q11 with Q8;
+      Q21 with Q4;
+      Q21 with Q3;
+      !Q24 with Q13;
+
+      
+OUTPUT: STANDARDIZED;
+        MODINDICES;
+        TECH4;

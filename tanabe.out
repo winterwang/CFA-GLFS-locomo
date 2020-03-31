@@ -1,0 +1,479 @@
+Mplus VERSION 8.4 (Mac)
+MUTHEN & MUTHEN
+03/31/2020   5:10 PM
+
+INPUT INSTRUCTIONS
+
+  TITLE: THE STRUCTURE OF LOCOMO25
+  DATA:
+      FILE = "../Locomo25.dat";
+  VARIABLE:
+       NAMES = ID Age Sex Q1-Q25 Total;
+       USEVARIABLES = Q3 Q8 Q10 Q11 Q12 Q13 Q18 Q22 Q23;
+       auxiliary = Total;
+       MISSING=.;
+  ANALYSIS:
+      !ESTIMATOR = MLR;
+      ESTIMATOR = ML;
+
+  MODEL:
+        Outdoor   BY Q18  Q22  Q23;
+        Indoor    BY Q8   Q10  Q11;
+        LLfuction BY Q3   Q12  Q13;
+
+  OUTPUT: STANDARDIZED;
+          MODINDICES;
+
+
+
+INPUT READING TERMINATED NORMALLY
+
+
+
+THE STRUCTURE OF LOCOMO25
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                         500
+
+Number of dependent variables                                    9
+Number of independent variables                                  0
+Number of continuous latent variables                            3
+
+Observed dependent variables
+
+  Continuous
+   Q3          Q8          Q10         Q11         Q12         Q13
+   Q18         Q22         Q23
+
+Observed auxiliary variables
+   TOTAL
+
+Continuous latent variables
+   OUTDOOR     INDOOR      LLFUCTIO
+
+
+Estimator                                                       ML
+Information matrix                                        OBSERVED
+Maximum number of iterations                                  1000
+Convergence criterion                                    0.500D-04
+Maximum number of steepest descent iterations                   20
+Maximum number of iterations for H1                           2000
+Convergence criterion for H1                             0.100D-03
+
+Input data file(s)
+  ../Locomo25.dat
+
+Input data format  FREE
+
+
+SUMMARY OF DATA
+
+     Number of missing data patterns             1
+
+
+COVARIANCE COVERAGE OF DATA
+
+Minimum covariance coverage value   0.100
+
+
+     PROPORTION OF DATA PRESENT
+
+
+           Covariance Coverage
+              Q3            Q8            Q10           Q11           Q12
+              ________      ________      ________      ________      ________
+ Q3             1.000
+ Q8             1.000         1.000
+ Q10            1.000         1.000         1.000
+ Q11            1.000         1.000         1.000         1.000
+ Q12            1.000         1.000         1.000         1.000         1.000
+ Q13            1.000         1.000         1.000         1.000         1.000
+ Q18            1.000         1.000         1.000         1.000         1.000
+ Q22            1.000         1.000         1.000         1.000         1.000
+ Q23            1.000         1.000         1.000         1.000         1.000
+
+
+           Covariance Coverage
+              Q13           Q18           Q22           Q23
+              ________      ________      ________      ________
+ Q13            1.000
+ Q18            1.000         1.000
+ Q22            1.000         1.000         1.000
+ Q23            1.000         1.000         1.000         1.000
+
+
+
+UNIVARIATE SAMPLE STATISTICS
+
+
+     UNIVARIATE HIGHER-ORDER MOMENT DESCRIPTIVE STATISTICS
+
+         Variable/         Mean/     Skewness/   Minimum/ % with                Percentiles
+        Sample Size      Variance    Kurtosis    Maximum  Min/Max      20%/60%    40%/80%    Median
+
+     Q3                    1.360       0.566       0.000   27.20%       0.000      1.000      1.000
+             500.000       1.342      -0.545       4.000    5.20%       1.000      2.000
+     Q8                    0.348       1.952       0.000   75.20%       0.000      0.000      0.000
+             500.000       0.455       3.133       3.000    1.40%       0.000      1.000
+     Q10                   0.354       2.237       0.000   74.60%       0.000      0.000      0.000
+             500.000       0.485       5.279       4.000    0.40%       0.000      1.000
+     Q11                   0.450       1.869       0.000   69.00%       0.000      0.000      0.000
+             500.000       0.604       3.366       4.000    0.60%       0.000      1.000
+     Q12                   1.116       0.822       0.000   37.00%       0.000      1.000      1.000
+             500.000       1.275      -0.215       4.000    3.60%       1.000      2.000
+     Q13                   1.362       0.640       0.000   30.20%       0.000      1.000      1.000
+             500.000       1.555      -0.641       4.000    7.60%       1.000      3.000
+     Q18                   0.838       1.281       0.000   54.40%       0.000      0.000      0.000
+             500.000       1.288       0.673       4.000    4.00%       1.000      2.000
+     Q22                   0.778       1.436       0.000   57.20%       0.000      0.000      0.000
+             500.000       1.261       1.094       4.000    4.00%       1.000      1.000
+     Q23                   1.350       0.778       0.000   35.60%       0.000      1.000      1.000
+             500.000       1.947      -0.712       4.000   13.80%       1.000      3.000
+
+
+THE MODEL ESTIMATION TERMINATED NORMALLY
+
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                       30
+
+Loglikelihood
+
+          H0 Value                       -5279.946
+          H1 Value                       -5187.071
+
+Information Criteria
+
+          Akaike (AIC)                   10619.892
+          Bayesian (BIC)                 10746.330
+          Sample-Size Adjusted BIC       10651.108
+            (n* = (n + 2) / 24)
+
+Chi-Square Test of Model Fit
+
+          Value                            185.749
+          Degrees of Freedom                    24
+          P-Value                           0.0000
+
+RMSEA (Root Mean Square Error Of Approximation)
+
+          Estimate                           0.116
+          90 Percent C.I.                    0.101  0.132
+          Probability RMSEA <= .05           0.000
+
+CFI/TLI
+
+          CFI                                0.933
+          TLI                                0.900
+
+Chi-Square Test of Model Fit for the Baseline Model
+
+          Value                           2452.638
+          Degrees of Freedom                    36
+          P-Value                           0.0000
+
+SRMR (Standardized Root Mean Square Residual)
+
+          Value                              0.049
+
+
+
+MODEL RESULTS
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ OUTDOOR  BY
+    Q18                1.000      0.000    999.000    999.000
+    Q22                0.803      0.054     14.838      0.000
+    Q23                0.936      0.069     13.548      0.000
+
+ INDOOR   BY
+    Q8                 1.000      0.000    999.000    999.000
+    Q10                1.050      0.064     16.333      0.000
+    Q11                1.262      0.069     18.169      0.000
+
+ LLFUCTIO BY
+    Q3                 1.000      0.000    999.000    999.000
+    Q12                1.357      0.092     14.732      0.000
+    Q13                1.554      0.105     14.811      0.000
+
+ INDOOR   WITH
+    OUTDOOR            0.357      0.036     10.051      0.000
+
+ LLFUCTIO WITH
+    OUTDOOR            0.553      0.057      9.662      0.000
+    INDOOR             0.267      0.029      9.129      0.000
+
+ Intercepts
+    Q3                 1.360      0.052     26.247      0.000
+    Q8                 0.348      0.030     11.537      0.000
+    Q10                0.354      0.031     11.370      0.000
+    Q11                0.450      0.035     12.953      0.000
+    Q12                1.116      0.050     22.104      0.000
+    Q13                1.362      0.056     24.423      0.000
+    Q18                0.838      0.051     16.512      0.000
+    Q22                0.778      0.050     15.494      0.000
+    Q23                1.350      0.062     21.631      0.000
+
+ Variances
+    OUTDOOR            0.985      0.089     11.074      0.000
+    INDOOR             0.264      0.028      9.415      0.000
+    LLFUCTION          0.510      0.070      7.287      0.000
+
+ Residual Variances
+    Q3                 0.833      0.057     14.652      0.000
+    Q8                 0.191      0.016     12.123      0.000
+    Q10                0.194      0.017     11.403      0.000
+    Q11                0.183      0.019      9.441      0.000
+    Q12                0.336      0.034      9.820      0.000
+    Q13                0.324      0.040      8.030      0.000
+    Q18                0.303      0.045      6.748      0.000
+    Q22                0.626      0.053     11.823      0.000
+    Q23                1.085      0.087     12.433      0.000
+
+
+STANDARDIZED MODEL RESULTS
+
+
+STDYX Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ OUTDOOR  BY
+    Q18                0.875      0.021     41.941      0.000
+    Q22                0.709      0.030     23.913      0.000
+    Q23                0.665      0.032     20.502      0.000
+
+ INDOOR   BY
+    Q8                 0.761      0.024     31.956      0.000
+    Q10                0.774      0.024     32.460      0.000
+    Q11                0.834      0.021     40.533      0.000
+
+ LLFUCTIO BY
+    Q3                 0.616      0.031     20.133      0.000
+    Q12                0.858      0.017     50.535      0.000
+    Q13                0.890      0.016     56.949      0.000
+
+ INDOOR   WITH
+    OUTDOOR            0.701      0.033     21.303      0.000
+
+ LLFUCTIO WITH
+    OUTDOOR            0.781      0.027     29.267      0.000
+    INDOOR             0.727      0.030     24.041      0.000
+
+ Intercepts
+    Q3                 1.174      0.058     20.197      0.000
+    Q8                 0.516      0.048     10.839      0.000
+    Q10                0.508      0.048     10.699      0.000
+    Q11                0.579      0.048     11.986      0.000
+    Q12                0.989      0.055     18.117      0.000
+    Q13                1.092      0.057     19.329      0.000
+    Q18                0.738      0.050     14.637      0.000
+    Q22                0.693      0.050     13.913      0.000
+    Q23                0.967      0.054     17.854      0.000
+
+ Variances
+    OUTDOOR            1.000      0.000    999.000    999.000
+    INDOOR             1.000      0.000    999.000    999.000
+    LLFUCTION          1.000      0.000    999.000    999.000
+
+ Residual Variances
+    Q3                 0.620      0.038     16.452      0.000
+    Q8                 0.420      0.036     11.593      0.000
+    Q10                0.401      0.037     10.857      0.000
+    Q11                0.304      0.034      8.843      0.000
+    Q12                0.263      0.029      9.030      0.000
+    Q13                0.208      0.028      7.486      0.000
+    Q18                0.235      0.036      6.444      0.000
+    Q22                0.497      0.042     11.802      0.000
+    Q23                0.557      0.043     12.897      0.000
+
+
+STDY Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ OUTDOOR  BY
+    Q18                0.875      0.021     41.941      0.000
+    Q22                0.709      0.030     23.913      0.000
+    Q23                0.665      0.032     20.502      0.000
+
+ INDOOR   BY
+    Q8                 0.761      0.024     31.956      0.000
+    Q10                0.774      0.024     32.460      0.000
+    Q11                0.834      0.021     40.533      0.000
+
+ LLFUCTIO BY
+    Q3                 0.616      0.031     20.133      0.000
+    Q12                0.858      0.017     50.535      0.000
+    Q13                0.890      0.016     56.949      0.000
+
+ INDOOR   WITH
+    OUTDOOR            0.701      0.033     21.303      0.000
+
+ LLFUCTIO WITH
+    OUTDOOR            0.781      0.027     29.267      0.000
+    INDOOR             0.727      0.030     24.041      0.000
+
+ Intercepts
+    Q3                 1.174      0.058     20.197      0.000
+    Q8                 0.516      0.048     10.839      0.000
+    Q10                0.508      0.048     10.699      0.000
+    Q11                0.579      0.048     11.986      0.000
+    Q12                0.989      0.055     18.117      0.000
+    Q13                1.092      0.057     19.329      0.000
+    Q18                0.738      0.050     14.637      0.000
+    Q22                0.693      0.050     13.913      0.000
+    Q23                0.967      0.054     17.854      0.000
+
+ Variances
+    OUTDOOR            1.000      0.000    999.000    999.000
+    INDOOR             1.000      0.000    999.000    999.000
+    LLFUCTION          1.000      0.000    999.000    999.000
+
+ Residual Variances
+    Q3                 0.620      0.038     16.452      0.000
+    Q8                 0.420      0.036     11.593      0.000
+    Q10                0.401      0.037     10.857      0.000
+    Q11                0.304      0.034      8.843      0.000
+    Q12                0.263      0.029      9.030      0.000
+    Q13                0.208      0.028      7.486      0.000
+    Q18                0.235      0.036      6.444      0.000
+    Q22                0.497      0.042     11.802      0.000
+    Q23                0.557      0.043     12.897      0.000
+
+
+STD Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ OUTDOOR  BY
+    Q18                0.992      0.045     22.148      0.000
+    Q22                0.797      0.049     16.347      0.000
+    Q23                0.929      0.062     14.918      0.000
+
+ INDOOR   BY
+    Q8                 0.513      0.027     18.830      0.000
+    Q10                0.539      0.028     19.067      0.000
+    Q11                0.648      0.031     21.242      0.000
+
+ LLFUCTIO BY
+    Q3                 0.714      0.049     14.574      0.000
+    Q12                0.969      0.042     22.833      0.000
+    Q13                1.110      0.046     24.079      0.000
+
+ INDOOR   WITH
+    OUTDOOR            0.701      0.033     21.303      0.000
+
+ LLFUCTIO WITH
+    OUTDOOR            0.781      0.027     29.267      0.000
+    INDOOR             0.727      0.030     24.041      0.000
+
+ Intercepts
+    Q3                 1.360      0.052     26.247      0.000
+    Q8                 0.348      0.030     11.537      0.000
+    Q10                0.354      0.031     11.370      0.000
+    Q11                0.450      0.035     12.953      0.000
+    Q12                1.116      0.050     22.104      0.000
+    Q13                1.362      0.056     24.423      0.000
+    Q18                0.838      0.051     16.512      0.000
+    Q22                0.778      0.050     15.494      0.000
+    Q23                1.350      0.062     21.631      0.000
+
+ Variances
+    OUTDOOR            1.000      0.000    999.000    999.000
+    INDOOR             1.000      0.000    999.000    999.000
+    LLFUCTION          1.000      0.000    999.000    999.000
+
+ Residual Variances
+    Q3                 0.833      0.057     14.652      0.000
+    Q8                 0.191      0.016     12.123      0.000
+    Q10                0.194      0.017     11.403      0.000
+    Q11                0.183      0.019      9.441      0.000
+    Q12                0.336      0.034      9.820      0.000
+    Q13                0.324      0.040      8.030      0.000
+    Q18                0.303      0.045      6.748      0.000
+    Q22                0.626      0.053     11.823      0.000
+    Q23                1.085      0.087     12.433      0.000
+
+
+R-SQUARE
+
+    Observed                                        Two-Tailed
+    Variable        Estimate       S.E.  Est./S.E.    P-Value
+
+    Q3                 0.380      0.038     10.066      0.000
+    Q8                 0.580      0.036     15.978      0.000
+    Q10                0.599      0.037     16.230      0.000
+    Q11                0.696      0.034     20.266      0.000
+    Q12                0.737      0.029     25.267      0.000
+    Q13                0.792      0.028     28.475      0.000
+    Q18                0.765      0.036     20.971      0.000
+    Q22                0.503      0.042     11.956      0.000
+    Q23                0.443      0.043     10.251      0.000
+
+
+QUALITY OF NUMERICAL RESULTS
+
+     Condition Number for the Information Matrix              0.260E-02
+       (ratio of smallest to largest eigenvalue)
+
+
+MODEL MODIFICATION INDICES
+
+NOTE:  Modification indices for direct effects of observed dependent variables
+regressed on covariates may not be included.  To include these, request
+MODINDICES (ALL).
+
+Minimum M.I. value for printing the modification index    10.000
+
+                                   M.I.     E.P.C.  Std E.P.C.  StdYX E.P.C.
+
+BY Statements
+
+OUTDOOR  BY Q8                    12.263    -0.155     -0.154       -0.228
+OUTDOOR  BY Q13                   15.055     0.416      0.413        0.331
+INDOOR   BY Q13                   12.473    -0.578     -0.297       -0.238
+INDOOR   BY Q18                   29.172     0.931      0.478        0.421
+INDOOR   BY Q23                   14.908    -0.722     -0.371       -0.266
+LLFUCTIO BY Q8                    10.126    -0.203     -0.145       -0.214
+LLFUCTIO BY Q10                   17.305     0.275      0.196        0.282
+LLFUCTIO BY Q18                   76.656     1.516      1.082        0.954
+LLFUCTIO BY Q22                   37.405    -0.842     -0.601       -0.535
+
+WITH Statements
+
+Q11      WITH Q8                  17.030     0.072      0.072        0.385
+Q11      WITH Q10                 14.333    -0.070     -0.070       -0.370
+Q13      WITH Q8                  16.289    -0.066     -0.066       -0.264
+Q22      WITH Q12                 11.245    -0.090     -0.090       -0.196
+Q22      WITH Q18                 14.476    -0.180     -0.180       -0.413
+Q23      WITH Q12                 13.343    -0.126     -0.126       -0.209
+Q23      WITH Q18                 34.084    -0.315     -0.315       -0.550
+Q23      WITH Q22                107.307     0.486      0.486        0.590
+
+
+     Beginning Time:  17:10:56
+        Ending Time:  17:10:56
+       Elapsed Time:  00:00:00
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2019 Muthen & Muthen
